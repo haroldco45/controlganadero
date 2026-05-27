@@ -23,10 +23,10 @@
 
     <div class="bg-white border-b border-slate-200 sticky top-[68px] z-40 shadow-sm">
         <div class="container mx-auto max-w-2xl flex">
-            <button id="tabAuditoria" class="flex-1 py-3 text-center font-bold text-sm border-b-2 border-emerald-700 text-emerald-800 transition-all">
+            <button id="tabAuditoria" class="flex-1 py-3 text-center font-bold text-sm border-b-2 border-emerald-700 text-emerald-800 transition-all cursor-pointer">
                 📝 Auditoría de Campo
             </button>
-            <button id="tabCatedra" class="flex-1 py-3 text-center font-bold text-sm text-slate-500 hover:text-emerald-700 transition-all">
+            <button id="tabCatedra" class="flex-1 py-3 text-center font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-emerald-700 transition-all cursor-pointer">
                 🎓 Cátedra Bienestar
             </button>
         </div>
@@ -36,7 +36,7 @@
         
         <div id="statusRed" class="mb-4 text-center text-xs font-semibold p-2 rounded-lg hidden"></div>
 
-        <div id="panelAuditoria" class="space-y-6">
+        <div id="panelAuditoria" class="block space-y-6">
             <form id="welfairForm" class="space-y-6">
                 
                 <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 space-y-3">
@@ -47,7 +47,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Evaluador / Auditor Técnico</label>
-                        <input type="text" id="nombreAuditor" required placeholder="Nombre del Médico Veterinario o Zootecnista" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-emerald-600 transition-all">
+                        <input type="text" id="nombreAuditor" required placeholder="Nombre del Médico Veterinario" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-emerald-600 transition-all">
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                         <div>
                             <label class="font-semibold block mb-1">Ausencia de hambre prolongada (Condición Corporal):</label>
                             <select id="p1_hambre" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none">
-                                <option value="100">Óptima (Menos del 2% de vacas flacas en el lote)</option>
+                                <option value="100">Óptima (Menos del 2% de vacas flacas)</option>
                                 <option value="50">Moderada (Entre 2% y 10% con baja condición)</option>
                                 <option value="0">Grave (Más del 10% con desnutrición visible)</option>
                             </select>
@@ -68,8 +68,8 @@
                         <div>
                             <label class="font-semibold block mb-1">Ausencia de sed prolongada (Acceso a agua):</label>
                             <select id="p1_sed" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none">
-                                <option value="100">Limpia, flujo constante, espacio suficiente en bebederos</option>
-                                <option value="50">Bebederos sucios o competencia/dominancia por espacio</option>
+                                <option value="100">Limpia, flujo constante, espacio suficiente</option>
+                                <option value="50">Bebederos sucios o competencia por espacio</option>
                                 <option value="0">Falta de agua o inaccesibilidad crítica</option>
                             </select>
                         </div>
@@ -79,23 +79,23 @@
                 <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 space-y-4">
                     <div class="border-l-4 border-amber-500 pl-3">
                         <h3 class="font-bold text-slate-900 text-base">2. Buen Alojamiento</h3>
-                        <p class="text-xs text-slate-500">Evaluación de las instalaciones y zonas de descanso.</p>
+                        <p class="text-xs text-slate-500">Evaluación de las instalaciones.</p>
                     </div>
                     <div class="grid grid-cols-1 gap-3 text-xs">
                         <div>
-                            <label class="font-semibold block mb-1">Confort durante el descanso (Tiempo en levantarse):</label>
+                            <label class="font-semibold block mb-1">Confort durante el descanso:</label>
                             <select id="p2_descanso" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none">
                                 <option value="100">Movimiento fluido, camas secas y confortables</option>
-                                <option value="50">Camas duras o húmedas; retraso leve al echarse/levantarse</option>
-                                <option value="0">Lesiones por colisión con cubículos, camas totalmente deterioradas</option>
+                                <option value="50">Camas duras o húmedas; retraso leve al levantarse</option>
+                                <option value="0">Lesiones por colisión, cubículos deteriorados</option>
                             </select>
                         </div>
                         <div>
                             <label class="font-semibold block mb-1">Confort Térmico (Índice THI / Jadeo):</label>
                             <select id="p2_termico" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none">
-                                <option value="100">Sistemas de ventilación/aspersión eficientes. Sin jadeo</option>
-                                <option value="50">Estrés térmico moderado (frecuencia respiratoria elevada aislada)</option>
-                                <option value="0">Estrés térmico severo generalizado (jadeo con boca abierta)</option>
+                                <option value="100">Sistemas de ventilación eficientes. Sin jadeo</option>
+                                <option value="50">Estrés térmico moderado (frecuencia respiratoria alta)</option>
+                                <option value="0">Estrés térmico severo generalizado (jadeo abierto)</option>
                             </select>
                         </div>
                     </div>
@@ -108,19 +108,19 @@
                     </div>
                     <div class="grid grid-cols-1 gap-3 text-xs">
                         <div>
-                            <label class="font-semibold block mb-1">Ausencia de lesiones (Cojeras / Locomoción):</label>
+                            <label class="font-semibold block mb-1">Ausencia de lesiones (Cojeras):</label>
                             <select id="p3_lesiones" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none">
                                 <option value="100">Menos del 5% del lote con marcha irregular</option>
-                                <option value="50">5% a 15% con cojera moderada (espalda arqueada al caminar)</option>
-                                <option value="0">Más del 15% de cojeras o presencia de cojeras severas</option>
+                                <option value="50">5% a 15% con cojera moderada</option>
+                                <option value="0">Más del 15% de cojeras o casos severos</option>
                             </select>
                         </div>
                         <div>
                             <label class="font-semibold block mb-1">Ausencia de enfermedades (Mastitis, respiratorias):</label>
                             <select id="p3_enfermedades" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none">
-                                <option value="100">Bajo control. Registros sanitarios al día y preventivos ejecutados</option>
-                                <option value="50">Casos clínicos aislados en tratamiento, sin brotes</option>
-                                <option value="0">Alta incidencia de mastitis clínica o neumonías sin aislar</option>
+                                <option value="100">Bajo control. Preventivos ejecutados al día</option>
+                                <option value="50">Casos clínicos aislados en tratamiento</option>
+                                <option value="0">Alta incidencia de mastitis clínica sin aislar</option>
                             </select>
                         </div>
                     </div>
@@ -129,29 +129,29 @@
                 <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 space-y-4">
                     <div class="border-l-4 border-purple-500 pl-3">
                         <h3 class="font-bold text-slate-900 text-base">4. Comportamiento Apropiado</h3>
-                        <p class="text-xs text-slate-500">Interacción social y manejo del personal.</p>
+                        <p class="text-xs text-slate-500">Interacción social y manejo.</p>
                     </div>
                     <div class="grid grid-cols-1 gap-3 text-xs">
                         <div>
                             <label class="font-semibold block mb-1">Distancia de Evitación (Relación Humano-Animal):</label>
                             <select id="p4_humano" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none">
-                                <option value="100">Los animales permiten el acercamiento a menos de 1 metro (Tranquilidad)</option>
-                                <option value="50">Distancia de huida intermedia (2-3 metros), alerta pero manejable</option>
-                                <option value="0">Pánico generalizado, golpes contra cercas al acercarse el personal</option>
+                                <option value="100">Permiten el acercamiento a menos de 1 metro</option>
+                                <option value="50">Distancia de huida intermedia (2-3 metros)</option>
+                                <option value="0">Pánico generalizado o respuestas agresivas</option>
                             </select>
                         </div>
                         <div>
-                            <label class="font-semibold block mb-1">Estado Emocional General (QBA - Qualitative Behavior Assessment):</label>
+                            <label class="font-semibold block mb-1">Estado Emocional General (QBA):</label>
                             <select id="p4_emocional" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none">
                                 <option value="100">Animales activos, curiosos, relajados al rumiar</option>
-                                <option value="50">Indiferencia, letargo moderado o frustración en salas de espera</option>
-                                <option value="0">Signos claros de angustia, estereotipias o vocalizaciones constantes</option>
+                                <option value="50">Indiferencia, letargo moderado o frustración</option>
+                                <option value="0">Signos claros de angustia o vocalizaciones constantes</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm cursor-pointer">
+                <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm cursor-pointer block text-center">
                     💾 Registrar y Calcular Dictamen Welfair
                 </button>
             </form>
@@ -164,31 +164,31 @@
             </section>
         </div>
 
-        <div id="panelCatedra" class="space-y-6 hidden">
+        <div id="panelCatedra" class="hidden space-y-6">
             <div class="bg-gradient-to-br from-slate-900 to-emerald-950 text-white p-6 rounded-2xl shadow-md">
                 <h2 class="text-xl font-black mb-2">Fundamentos Científicos del Bienestar Animal</h2>
-                <p class="text-xs text-emerald-200 leading-relaxed">El estándar Welfair™ LATAM no evalúa percepciones humanas subjetivas, sino variables biológicas directas recopiladas por investigadores de las principales instituciones científicas del mundo.</p>
+                <p class="text-xs text-emerald-200 leading-relaxed">El estándar Welfair™ LATAM evalúa variables biológicas directas validadas por los proyectos europeos Welfare Quality y AWIN.</p>
             </div>
 
             <div class="space-y-4">
                 <div class="bg-white p-4 rounded-xl border border-slate-200">
                     <h3 class="font-bold text-emerald-800 text-sm mb-1">🥛 1. Las 5 Libertades vs. Los 4 Principios</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Históricamente nos basamos en las "5 libertades de Brambell", pero el protocolo moderno Welfair™ lo traduce en 4 principios prácticos medidos en la vaca: **Alimentación, Alojamiento, Salud y Comportamiento**. No basta con poner la comida, hay que evaluar si el animal asimila de forma óptima.</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">Evolucionamos de las libertades teóricas clásicas a principios evaluados directamente sobre el animal: Alimentación, Alojamiento, Salud y Comportamiento. Lo que importa es la respuesta del organismo bovino.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-xl border border-slate-200">
                     <h3 class="font-bold text-emerald-800 text-sm mb-1">📉 2. Impacto Económico Directo</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">El estrés eleva los niveles de cortisol, inhibiendo la liberación de oxitocina. Un establo certificado con alto bienestar animal reduce la tasa de descarte por cojeras en hasta un **40%**, disminuye los días abiertos y optimiza la curva de lactancia, aumentando los litros totales por vaca al año.</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">El estrés eleva el cortisol disminuyendo la oxitocina. Reducir los factores estresantes incrementa los litros totales por lactancia y disminuye los descartes prematuros por problemas podales hasta en un 40%.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-xl border border-slate-200">
                     <h3 class="font-bold text-emerald-800 text-sm mb-1">🩹 3. Protocolo de Evaluación de Locomoción</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">La cojera es el principal dolor oculto en la lechería tropical y especializada. Se enseña a evaluar con la escala de 1 a 5: una vaca nivel 3 camina con el lomo arqueado; una nivel 4 ya no apoya el miembro con fuerza. Welfair exige detectar estos niveles antes de que lleguen a la cronicidad.</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">La detección temprana usando escalas de marcha evita pérdidas drásticas en producción de leche. Welfair exige identificar arqueamientos de lomo antes de que se consolide una cojera crónica.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-xl border border-slate-200">
-                    <h3 class="font-bold text-emerald-800 text-sm mb-1">🤝 4. Relación Humano-Animal y Distancia de Huida</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Los animales tienen memoria asociativa a largo plazo. Un manejo con gritos o picanas eléctricas genera miedo crónico. Al ingresar al corral, medir cuántos animales huyen a más de dos metros dictamina la calidad ética y profesional del personal de ordeño y vaquería.</p>
+                    <h3 class="font-bold text-emerald-800 text-sm mb-1">🤝 4. Relación Humano-Animal</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Los bovinos poseen memoria asociativa compleja. Un trato calmado reduce la distancia de huida en el corral, facilitando el arreo y disminuyendo accidentes en las salas de ordeño.</p>
                 </div>
             </div>
         </div>
@@ -201,27 +201,29 @@
     </footer>
 
     <script>
-        // Sistema de Pestañas
         const tabAuditoria = document.getElementById('tabAuditoria');
         const tabCatedra = document.getElementById('tabCatedra');
         const panelAuditoria = document.getElementById('panelAuditoria');
         const panelCatedra = document.getElementById('panelCatedra');
 
+        // Alternancia de Pestañas Corregida para Tailwind v4
         tabAuditoria.addEventListener('click', () => {
-            tabAuditoria.className = "flex-1 py-3 text-center font-bold text-sm border-b-2 border-emerald-700 text-emerald-800 transition-all";
-            tabCatedra.className = "flex-1 py-3 text-center font-bold text-sm text-slate-500 hover:text-emerald-700 transition-all";
-            panelAuditoria.classList.remove('hidden');
-            panelCatedra.classList.add('hidden');
+            tabAuditoria.className = "flex-1 py-3 text-center font-bold text-sm border-b-2 border-emerald-700 text-emerald-800 transition-all cursor-pointer";
+            tabCatedra.className = "flex-1 py-3 text-center font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-emerald-700 transition-all cursor-pointer";
+            
+            panelAuditoria.style.display = "block";
+            panelCatedra.style.display = "none";
         });
 
         tabCatedra.addEventListener('click', () => {
-            tabCatedra.className = "flex-1 py-3 text-center font-bold text-sm border-b-2 border-emerald-700 text-emerald-800 transition-all";
-            tabAuditoria.className = "flex-1 py-3 text-center font-bold text-sm text-slate-500 hover:text-emerald-700 transition-all";
-            panelCatedra.classList.remove('hidden');
-            panelAuditoria.classList.add('hidden');
+            tabCatedra.className = "flex-1 py-3 text-center font-bold text-sm border-b-2 border-emerald-700 text-emerald-800 transition-all cursor-pointer";
+            tabAuditoria.className = "flex-1 py-3 text-center font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-emerald-700 transition-all cursor-pointer";
+            
+            panelAuditoria.style.display = "none";
+            panelCatedra.style.display = "block";
         });
 
-        // Formulario e Historial
+        // Formulario y Envío
         const form = document.getElementById('welfairForm');
         const listaRegistros = document.getElementById('listaRegistros');
 
@@ -231,7 +233,6 @@
             const hacienda = document.getElementById('nombreHacienda').value.trim();
             const auditor = document.getElementById('nombreAuditor').value.trim();
             
-            // Obtener todos los sub-criterios
             const subValores = [
                 parseInt(document.getElementById('p1_hambre').value),
                 parseInt(document.getElementById('p1_sed').value),
@@ -243,11 +244,9 @@
                 parseInt(document.getElementById('p4_emocional').value)
             ];
 
-            // Promedio integral real
             const totalSuma = subValores.reduce((acc, curr) => acc + curr, 0);
             const cumplimientoFinal = Math.round(totalSuma / subValores.length);
 
-            // Determinar Categoría Welfair
             let nivelWelfair = "No Certificable";
             if(cumplimientoFinal >= 85) nivelWelfair = "Excelente (⭐⭐⭐)";
             else if(cumplimientoFinal >= 70) nivelWelfair = "Cumplimiento Avanzado (⭐⭐)";
@@ -268,7 +267,8 @@
             
             form.reset();
             cargarRegistros();
-            alert(`📝 Auditoría Procesada.\nResultado: ${cumplimientoFinal}% - Categoría: ${nivelWelfair}`);
+            
+            alert(`✅ Auditoría Guardada con Éxito.\nResultado: ${cumplimientoFinal}% - ${nivelWelfair}`);
         });
 
         function cargarRegistros() {
@@ -286,11 +286,11 @@
                             <div>
                                 <h4 class="font-black text-sm text-slate-900">${reg.hacienda}</h4>
                                 <p class="text-[11px] text-slate-500">Auditor: ${reg.auditor}</p>
-                                <p class="text-[10px] text-slate-400">${reg.fecha} | ID: ${reg.id}</p>
+                                <p class="text-[10px] text-slate-400">${reg.fecha}</p>
                             </div>
                             <div class="text-right">
                                 <span class="px-2 py-1 rounded-md font-bold ${colorBadge} block text-xs mb-1">
-                                    ${reg.score}% Global
+                                    ${reg.score}% OK
                                 </span>
                                 <span class="text-[10px] font-bold text-slate-600 block">${reg.rango}</span>
                             </div>
@@ -300,12 +300,8 @@
             }).join('');
         }
 
-        // Manejo de Red (PWA standard)
-        const statusRed = document.getElementById('statusRed');
-        function actualizarEstadoRed() {
-            if (navigator.onLine) {
-                statusRed.textContent = "🟢 Modo Sincronizado - Base de datos local lista";
-                statusRed.className = "mb-4 text-center text-xs font-semibold p-2 rounded-lg bg-green-50 text-green-700 block";
-                setTimeout(() => statusRed.classList.add('hidden'), 3000);
-            } else {
-                statusRed.textContent = "⚠️ Red Offline - Los datos científicos se protegen localmente en el dispositivo
+        // Ejecutar carga inicial
+        cargarRegistros();
+    </script>
+</body>
+</html>
